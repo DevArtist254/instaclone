@@ -1,0 +1,29 @@
+{
+ "name": "instaclone",
+ "version": "1.0.0",
+ "description": "abilit to store a image online and read from a database",
+ "main": "server.js",
+ "scripts": {
+  "start": "node server.js",
+  "build": "cd client && npm install && npm run build"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/DevArtist254/instaclone.git"
+ },
+ "keywords": [
+  "instaclone"
+ ],
+ "author": "devartist404",
+ "license": "ISC",
+ "bugs": {
+  "url": "https://github.com/DevArtist254/instaclone/issues"
+ },
+ "homepage": "https://github.com/DevArtist254/instaclone#readme",
+ "dependencies": {
+  "express": "4.18.1"
+ },
+ "engines": {
+  "node": "18.8.0"
+ }
+}

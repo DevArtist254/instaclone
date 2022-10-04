@@ -1,7 +1,12 @@
 import React from "react"
+import UploadForm from "../comp/UploadForm"
 
 function Dashboard() {
- return <div>Dashboard</div>
+ return (
+  <div>
+   <UploadForm />
+  </div>
+ )
 }
 
 export default Dashboard

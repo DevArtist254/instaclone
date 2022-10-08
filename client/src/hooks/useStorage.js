@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react"
+import axios from "axios"
 import {
  getStorage,
  ref,
@@ -32,8 +33,12 @@ const useStorage = (file) => {
    },
    () => {
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-     //await collectionRef.add({ url, createdAt });
+    getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+     const imageDetails = {
+      name: file.name,
+      url: downloadURL,
+     }
+     await axios.post("/instaclone/v1/images/post-an-image", imageDetails)
      setUrl(downloadURL)
     })
    }

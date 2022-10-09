@@ -32,15 +32,15 @@ function Signup({setSignup, token, loading, errMessage}) {
    <h1>Sign up page</h1>
    <form onSubmit={submit}>
     <div>
-     <label>Email</label>
+     <h2>Email</h2>
      <input name="email" type="email" ref={emailRef} required />
     </div>
     <div>
-     <label>Password</label>
+     <h2>Password</h2>
      <input name="password" type="password" ref={passwordRef} required />
     </div>
     <div>
-     <label>Password Confrim</label>
+     <h2>Password Confrim</h2>
      <input name="password" type="password" ref={passwordConfirmRef} required />
     </div>
     <input type="submit" />

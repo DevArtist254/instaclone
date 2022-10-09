@@ -3,6 +3,8 @@ import {auth} from "../../firebase/config"
 import {
  createUserWithEmailAndPassword,
  signInWithEmailAndPassword,
+ getAuth,
+ onAuthStateChanged,
 } from "firebase/auth"
 
 export const loadAuth = () => ({
@@ -46,6 +48,22 @@ export const setLogin = (email, password) => {
     password
    )
    dispatch(successStateAuth(userCredential.user))
+  } catch (error) {
+   dispatch(failStateAuth(error.message))
+  }
+ }
+}
+
+export const getCurrentUser = () => {
+ return async (dispatch) => {
+  try {
+   loadAuth()
+   const auth = getAuth()
+   await onAuthStateChanged(auth, (user) => {
+    if (user) {
+     dispatch(successStateAuth(user))
+    }
+   })
   } catch (error) {
    dispatch(failStateAuth(error.message))
   }

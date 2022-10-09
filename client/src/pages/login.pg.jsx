@@ -26,11 +26,11 @@ function Login({setLogin, token, loading, errMessage}) {
    <h1>Login</h1>
    <form onSubmit={submit}>
     <div>
-     <label>Email</label>
+     <h3>Email</h3>
      <input name="email" type="email" ref={emailRef} required />
     </div>
     <div>
-     <label>Password</label>
+     <h3>Password</h3>
      <input name="password" type="password" ref={passwordRef} required />
     </div>
     <input type="submit" />

@@ -1,11 +1,10 @@
 import {createStore, applyMiddleware} from "redux"
 import thunk from "redux-thunk"
 import {persistStore} from "redux-persist"
-import logger from "redux-logger"
 
 import persistedReducer from "./root-reducer"
 
-const middlewares = [logger, thunk]
+const middlewares = [thunk]
 
 export const store = createStore(
  persistedReducer,

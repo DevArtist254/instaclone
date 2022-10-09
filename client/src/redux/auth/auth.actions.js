@@ -59,6 +59,7 @@ export const getCurrentUser = () => {
   try {
    loadAuth()
    const auth = getAuth()
+
    await onAuthStateChanged(auth, (user) => {
     if (user) {
      dispatch(successStateAuth(user))

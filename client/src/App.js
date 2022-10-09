@@ -1,5 +1,5 @@
 import {connect} from "react-redux"
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, useNavigate} from "react-router-dom"
 import {getCurrentUser} from "./redux/auth/auth.actions"
 import Dashboard from "./pages/dashboard.pg"
 import Home from "./pages/home.pg"
@@ -9,15 +9,18 @@ import Nav from "./comp/nav.comp"
 import {useEffect} from "react"
 
 function App({getCurrentUser, token, errMessage, loading}) {
+ let navigate = useNavigate()
  useEffect(() => {
   getCurrentUser()
- }, [getCurrentUser])
+  navigate("/dashboard")
+  // eslint-disable-next-line
+ }, [])
 
  return (
   <div className="App">
    <Nav />
    <Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="/" exact element={<Home />} />
     <Route path="/signup" element={<Signup />} />
     <Route path="/login" element={<Login />} />
     <Route
